@@ -1,0 +1,9 @@
+.category-preview-item {
+    margin: 5px;
+    padding: 10px;
+    transition: 0.3s ease;
+}
+.category-preview-item:hover {
+    box-shadow: inset 0 0 0 10px #e2e8f0;
+    transition: 0.3s ease;
+}
