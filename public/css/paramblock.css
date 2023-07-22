@@ -1,0 +1,23 @@
+#blocks-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.param-block {
+    display: block;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+.param-block button{
+    border: 0;
+    background-color: white;
+    font-size: 18px;
+}
+.param-block button span{
+    color: #a0aec0;
+}
+
+.param-block button:hover{
+    color: #a0aec0;
+}

@@ -7,3 +7,12 @@
     box-shadow: inset 0 0 0 10px #e2e8f0;
     transition: 0.3s ease;
 }
+.category-preview-item img{
+    scale: 100%;
+    transition: scale 0.3s ease;
+}
+
+.category-preview-item:hover img{
+    scale: 110%;
+    transition: scale 0.3s ease;
+}

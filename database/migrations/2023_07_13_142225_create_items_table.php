@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->bigInteger('code');
             $table->string('description',2000);
-            $table->float('price_buy')->nullable();
-            $table->float('price_sell')->nullable();
+            $table->float('price');
             $table->bigInteger('count_available');
+            $table->bigInteger('count_total');
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
 

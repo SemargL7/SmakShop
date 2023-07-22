@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('user_name');
-            $table->string('user_address');
+            $table->string('user_address')->nullable();
             $table->string('user_phone');
-            $table->string('track_number');
-            $table->bigInteger('order_status_id')->unsigned();
-            $table->bigInteger('delivery_id')->unsigned();
+            $table->string('user_email');
+            $table->string('track_number')->nullable();
+            $table->bigInteger('order_status_id')->unsigned()->nullable();
+            $table->bigInteger('delivery_id')->unsigned()->nullable();
             $table->foreign('order_status_id')->references('id')->on('order_statuses');
             $table->foreign('delivery_id')->references('id')->on('deliveries');
 

@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('item_reviews', function (Blueprint $table) {
+        Schema::create('characteristics', function (Blueprint $table) {
             $table->id();
-            $table->string('user_name');
-            $table->string('user_email');
-            $table->string('review',1000);
-            $table->integer('stars');
+            $table->string('name');
+            $table->string('value');
             $table->bigInteger('item_id')->unsigned();
-            $table->foreign('item_id')->references('id')->on('items')->cascadeOnDelete();
-
             $table->timestamps();
+            $table->foreign('item_id')->references('id')->on('items')->cascadeOnDelete();
         });
     }
 
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('item_reviews');
+        Schema::dropIfExists('characteristics');
     }
 };

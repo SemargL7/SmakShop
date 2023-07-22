@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'App\Http\Controllers'], function() {
+    Route::get('/', 'WelcomeController@show');
+    Route::get('/product/{product}', 'ProductController@show');
+    Route::get('/product/{product}/addToBasket', 'ProductController@perform');
+    Route::post('/review/post', 'ReviewController@store');
+    Route::get('/search', 'SearchController@show');
+    Route::get('/basket', 'BasketController@show');
+    Route::post('/basket', 'BasketController@perform');
+
+
+    Route::get('/admin', 'AdminProductController@show');
+    Route::get('/admin/product/create', 'AdminCreateProductController@show');
+    Route::post('/admin/product/create', 'AdminCreateProductController@store');
+    Route::get('/admin/category/create', 'AdminCreateCategoryController@show');
+    Route::post('/admin/category/create', 'AdminCreateCategoryController@store');
 });

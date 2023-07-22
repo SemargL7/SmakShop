@@ -13,7 +13,10 @@
 .slider-item{
     max-width: 400px;
 }
-
+.slider-item a{
+    text-decoration: none;
+    color: black;
+}
 
 #prevBtn,
 #nextBtn {

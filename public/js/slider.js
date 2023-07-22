@@ -2,6 +2,9 @@ function goToPrevSlide(sliderId) {
     const slider = document.getElementById(sliderId);
     const slides = slider.querySelectorAll('.slider-item');
     let currentSlide = Array.from(slides).findIndex(slide => slide.classList.contains('slider-item-active'));
+    if (currentSlide === -1) {
+        currentSlide = 0;
+    }
     currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
     showSlide(sliderId, currentSlide);
 }
@@ -11,6 +14,9 @@ function goToNextSlide(sliderId) {
     const slider = document.getElementById(sliderId);
     const slides = slider.querySelectorAll('.slider-item');
     let currentSlide = Array.from(slides).findIndex(slide => slide.classList.contains('slider-item-active'));
+    if (currentSlide === -1) {
+        currentSlide = 0;
+    }
     currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
     showSlide(sliderId, currentSlide);
 }

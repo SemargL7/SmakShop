@@ -1,0 +1,29 @@
+.detail-product-slider {
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.detail-product-slider-content {
+    height: 200px;
+    display: block;
+
+    transition: transform 0.5s;
+}
+
+.detail-product-slider-item {
+    margin: 2px;
+
+
+}
+.detail-product-slider-item-active img{
+    border: solid 1px;
+}
+
+.detail-product-slider-item img {
+    width: 100%;
+}
+
+.product-price-info{
+    background-color: #d3d3d3;
+}

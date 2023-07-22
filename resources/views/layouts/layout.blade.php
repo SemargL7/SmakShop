@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="{{ asset('css/stars.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/categoriesBlock.css') }}" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg border-bottom container">
@@ -50,7 +52,7 @@
                         </div>
                         <div class="col-md-3 text-center">
                             В кошику <span>0</span> товару
-                            <button type="button" class="btn btn-dark w-100 rounded-0">Оформити заказ</button>
+                            <a href="/basket" class="btn btn-dark w-100 rounded-0">Оформити заказ</a>
                         </div>
                     </div>
                 </li>
@@ -59,14 +61,14 @@
     </div>
 </nav>
 <div class="container">
-    <form>
+    <form class="filter-search" action="/search" method="GET">
         <div class="row">
             <div class="col-md-2 p-0">
                 <a class="btn btn-dark w-100 rounded-0 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Категорії
                 </a>
-                <ul class="dropdown-menu rounded-0">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
+                <ul class="dropdown-menu rounded-0" id="category-container">
+                    <li><div id="categoriesBlock"></div></li>
                 </ul>
             </div>
             <div class="col-md-8 p-0">
@@ -135,7 +137,8 @@
     </div>
 
 </footer>
-
+<script src="{{ asset('js/getCategories.js') }}"></script>
+<script src="{{ asset('js/reviewStars.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('url',2000);
-            $table->string('image_size');
-            $table->bigInteger('item_id')->unsigned();
+            $table->string('image_type', 25)->default('');
+            $table->binary('image', 'LONGBLOB');
+            $table->string('image_size', 25)->default('');
+            $table->string('image_ctgy', 25)->default('');
+            $table->string('image_name', 1000)->default('');
+            $table->bigInteger('item_id')->unsigned()->nullable();
+            $table->bigInteger('category_id')->unsigned()->nullable();
             $table->foreign('item_id')->references('id')->on('items')->cascadeOnDelete();
-
+            $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
             $table->timestamps();
         });
     }

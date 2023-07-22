@@ -1,0 +1,16 @@
+.counter{
+    max-width: 140px;
+}
+
+.basket img{
+    height: 50px;
+}
+.basket .counter input{
+    -moz-appearance: textfield;
+}
+
+.basket .counter input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
