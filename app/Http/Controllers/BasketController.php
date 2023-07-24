@@ -18,13 +18,12 @@ class BasketController extends Controller
         }
 
         $basket_item_ids = session()->get('basket');
-        $items = Item::whereIn('id',$basket_item_ids)->with(['images' => function ($query) {
-            $query->orderBy('id')->take(1);
-        }])->get();
+        $items = Item::whereIn('id',$basket_item_ids)->with(['images'])->get();
+        $items->filterFirstImage();
         return view('basket', compact('items'));
     }
 
-    function perform(Request $request){
+    function store(Request $request){
 
         // Validate the request data, if needed
         $validatedData = $request->validate([
@@ -58,5 +57,14 @@ class BasketController extends Controller
         session()->put('basket', []);
         // Optionally, you can send a response back to the client
         return response()->json(['message' => 'Order submitted successfully']);
+    }
+
+    function removeItem($product_id){
+        $items = session()->get('basket');
+        $items = array_filter($items, function ($item) use ($product_id) {
+            return $item !== $product_id;
+        });
+        session()->put('basket', $items);
+        return response()->redirectTo('basket');
     }
 }

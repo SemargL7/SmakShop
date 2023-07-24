@@ -1,13 +1,10 @@
 @extends('layouts.layout')
-@section('title', 'Product List')
+@section('title', 'Products')
 @section('main_content')
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <a href="/admin/product/create">Create product</a>
-            </div>
-            <div class="col-md-12">
-                <a href="/admin/category/create">Create category</a>
             </div>
             <div>
                 @foreach($items as $item)

@@ -20,7 +20,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::post('/review/post', 'ReviewController@store');
     Route::get('/search', 'SearchController@show');
     Route::get('/basket', 'BasketController@show');
-    Route::post('/basket', 'BasketController@perform');
+    Route::post('/basket', 'BasketController@store');
+    Route::get('/basket/remove/{product_id}', 'BasketController@removeItem');
 
 
     Route::get('/admin', 'AdminProductController@show');

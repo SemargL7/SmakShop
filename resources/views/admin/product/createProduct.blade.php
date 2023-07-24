@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Product List')
+@section('title', 'Create Product')
 @section('main_content')
     <div class="container">
         <div>

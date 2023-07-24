@@ -107,9 +107,6 @@
             <h5>Інформація:</h5>
             <ul>
                 <li>
-                    <a class="nav-link p-0" href="#">Монобанк</a>
-                </li>
-                <li>
                     <a class="nav-link p-0" href="#">Гарантії</a>
                 </li>
                 <li>
@@ -123,6 +120,9 @@
         <div class="col-md-3">
             <h5>Доставка і оплата:</h5>
             <ul>
+                <li>
+                    <a class="nav-link p-0" href="#">Монобанк</a>
+                </li>
                 <li>
                     <a class="nav-link p-0" href="#">Visa</a>
                 </li>

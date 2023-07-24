@@ -75,7 +75,7 @@
                                     {{$item->price}}
                                 </td>
                                 <td>
-                                    x
+                                    <a href="/basket/remove/{{$item->id}}">X</a>
                                 </td>
                             </tr>
                             </tbody>
